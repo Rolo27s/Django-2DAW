@@ -54,7 +54,7 @@ ROOT_URLCONF = 'actividadesdeintroduccion.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ './actividadesdeintroduccion/plantillas' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

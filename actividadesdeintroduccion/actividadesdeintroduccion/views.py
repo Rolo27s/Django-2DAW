@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.template.loader import get_template
 
 def funcionej1(request, base, altura):
     area = base * altura / 2
@@ -16,3 +17,11 @@ def funcionej2(request):
         area = float(lado1) * float(lado2)
         respuesta = (f"El rectángulo de lado1 {lado1} y lado2 {lado2} tiene un area de {area:.2f}")
     return HttpResponse(respuesta)
+
+def ejemplo2(request, nombre):
+    html = get_template("Ej1.html")
+    datos = {
+        "nomb_persona":nombre,
+        "positivo": len(nombre)>8,
+        }
+    return HttpResponse(html.render(datos))

@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, register_converter
-from .views import funcionej1 , funcionej2 #, funcionej3, funcionej4, funcionej5, funcionej6, funcionej7, funcionej8, funcionej9, funcionej10
+from .views import ejemplo2, funcionej1 , funcionej2 #, funcionej3, funcionej4, funcionej5, funcionej6, funcionej7, funcionej8, funcionej9, funcionej10
 from . import convertidor
 
 # https://docs.djangoproject.com/en/3.0/topics/http/urls/#registering-custom-path-converters
@@ -27,8 +27,9 @@ register_converter(convertidor.FloatUrlParameterConverter, 'float')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ej1/<float:base>/<float:altura>', funcionej1), 
-    path('ej2/calcularArea', funcionej2),
+    path('ejemplo2/<str:nombre>/', ejemplo2),
+    path('ej1/<float:base>/<float:altura>/', funcionej1), 
+    path('ej2/calcularArea/', funcionej2),
     #path('ej3/', funcionej3),
     #path('ej4/', funcionej4),
     #path('ej5/', funcionej5),

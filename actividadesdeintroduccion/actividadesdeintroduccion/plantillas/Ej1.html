@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla1</title>
+</head>
+<body>
+    <h1>Hola {{ nomb_persona }}</h1>
+    {# Comentario de una linea #}
+
+    {% comment %}
+    Comentario de varias lineas
+    {% endcomment %}
+
+    {% if positivo %}
+        El nombre tiene mas de 8 caracteres
+    {% else %}
+        El nombre tiene menos de 8 caracteres
+    {% endif %}
+</body>
+</html>
