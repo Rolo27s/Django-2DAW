@@ -6,7 +6,7 @@
     <title>Plantilla1</title>
 </head>
 <body>
-    <h1>Hola {{ nomb_persona }}</h1>
+    <h1>Hola {{ nomb_persona | upper }}</h1>
     {# Comentario de una linea #}
 
     {% comment %}
@@ -14,9 +14,17 @@
     {% endcomment %}
 
     {% if positivo %}
-        El nombre tiene mas de 8 caracteres
+        El nombre tiene 8 o mas caracteres
     {% else %}
         El nombre tiene menos de 8 caracteres
     {% endif %}
+
+    <table border="1">
+        <tr>
+            {% for objeto in lista %}
+                <td>{{ objeto }}</td>
+            {% endfor %}
+        </tr>
+    </table>
 </body>
 </html>

@@ -22,6 +22,7 @@ def ejemplo2(request, nombre):
     html = get_template("Ej1.html")
     datos = {
         "nomb_persona":nombre,
-        "positivo": len(nombre)>8,
+        "positivo": len(nombre)>=8,
+        "lista": [1,5,"a",6],
         }
     return HttpResponse(html.render(datos))
