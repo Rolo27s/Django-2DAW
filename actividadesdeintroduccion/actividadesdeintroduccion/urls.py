@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from .views import funcionej1 #, funcionej2, funcionej3, funcionej4, funcionej5, funcionej6, funcionej7, funcionej8, funcionej9, funcionej10
 
+# https://docs.djangoproject.com/en/3.0/topics/http/urls/#registering-custom-path-converters
+# int, str, slug, uuid, path
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ej1/<int:base>/<int:altura>', funcionej1),
+    path('ej1/<str:base>/<str:altura>', funcionej1), 
     #path('ej2/', funcionej2),
     #path('ej3/', funcionej3),
     #path('ej4/', funcionej4),
