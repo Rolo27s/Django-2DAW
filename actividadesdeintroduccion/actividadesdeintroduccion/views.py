@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 
 def funcionej1(request, base, altura):
-    area = float(base) * float(altura) / 2
+    area = base * altura / 2
     respuesta = (f"El triangulo de base {base} y altura {altura} tiene un area de {area:.2f}")
     return HttpResponse(respuesta)
 
@@ -16,4 +16,3 @@ def funcionej2(request):
         area = float(lado1) * float(lado2)
         respuesta = (f"El rectángulo de lado1 {lado1} y lado2 {lado2} tiene un area de {area:.2f}")
     return HttpResponse(respuesta)
-

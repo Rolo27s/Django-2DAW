@@ -15,15 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, register_converter
 from .views import funcionej1 , funcionej2 #, funcionej3, funcionej4, funcionej5, funcionej6, funcionej7, funcionej8, funcionej9, funcionej10
+from . import convertidor
 
 # https://docs.djangoproject.com/en/3.0/topics/http/urls/#registering-custom-path-converters
 # int, str, slug, uuid, path
 
+# Para habilitar los floats en el path param
+register_converter(convertidor.FloatUrlParameterConverter, 'float')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ej1/<str:base>/<str:altura>', funcionej1), 
+    path('ej1/<float:base>/<float:altura>', funcionej1), 
     path('ej2/calcularArea', funcionej2),
     #path('ej3/', funcionej3),
     #path('ej4/', funcionej4),
