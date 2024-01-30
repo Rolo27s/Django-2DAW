@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+</head>
+<body>
+    {% if form.errors %}
+        <p>Error en los datos, revísalos por favor</p>
+    {% endif %}
+    <form action="/contacto/" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% comment %}
+            Tambien existen estas otras posibilidades:
+            {{ form.as_div }}
+            {{ form.as_p }}
+            {{ form.as_ul }}
+        {% endcomment %}
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
